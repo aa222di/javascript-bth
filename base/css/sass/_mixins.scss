@@ -1,0 +1,16 @@
+
+/* ------------------------ MIXINS ------------------------ */
+/* Calculates font size in rem and px  for browser compatability */
+@mixin font-size($sizeValue) {
+  $remValue: $sizeValue;
+  $pxValue: ($sizeValue * 10);
+  font-size: $pxValue * 1px; 
+  //font-size: $remValue * 1rem;
+}
+
+/* Sets h1 on baseline */
+@mixin position($sizeValue, $lineheight) {
+  //$top: ($lineheight - $sizeValue) / 2;
+  //position: relative;
+  //top: $top;
+}

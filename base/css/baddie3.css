@@ -1,0 +1,52 @@
+.baddie {
+  width: 64px;
+  height: 64px;
+  background-image: url(../img/sprite_mickey_mos.png);
+  z-index: 0;
+  transition: top .2s ease, left .2s ease, -webkit-transform .2s ease;
+  transition: top .2s ease, left .2s ease, transform .2s ease;
+  position: absolute; }
+  .baddie.up {
+    background-position: 64px 0; }
+  .baddie.down {
+    background-position: 128px 0px; }
+  .baddie.left {
+    background-position: 192px 0; }
+  .baddie.right {
+    background-position: 0 0; }
+  .baddie.flip {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  .baddie.flipRight {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  .baddie.flipLeft {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg); }
+  .baddie.flipx2 {
+    -webkit-transform: rotate(-540deg);
+            transform: rotate(-540deg); }
+  .baddie.size-half {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5); }
+  .baddie.size-double {
+    -webkit-transform: scale(2);
+            transform: scale(2); }
+  .baddie.skew-horisontal {
+    -webkit-transform: skew(30deg, 0);
+            transform: skew(30deg, 0); }
+  .baddie.skew-vertical {
+    -webkit-transform: skew(0, 30deg);
+            transform: skew(0, 30deg); }
+  .baddie.skew-vertical {
+    -webkit-transform: skew(0, 30deg);
+            transform: skew(0, 30deg); }
+  .baddie.move {
+    -webkit-transform: translate(100px, 100px);
+            transform: translate(100px, 100px); }
+  .baddie.move-flip {
+    -webkit-transform: rotate(180deg) translate(100px, 100px);
+            transform: rotate(180deg) translate(100px, 100px); }
+
+td {
+  width: 140px; }

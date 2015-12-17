@@ -1,0 +1,26 @@
+.baddie{
+	width:64px;
+	height:64px;
+	background-image:url(../img/sprite_mickey_mos.png);
+	z-index: 0;
+	transition: top .2s ease, left .2s ease, transform .2s ease;
+  position: absolute;
+
+  &.up{background-position:64px 0;}
+  &.down{background-position:128px 0px;}
+  &.left{background-position:192px 0;}
+  &.right{background-position:0 0;}
+  &.flip{transform: rotate(180deg);}
+  &.flipRight{transform: rotate(360deg);}
+  &.flipLeft{transform: rotate(-360deg);}
+  &.flipx2{transform: rotate(-540deg);}
+  &.size-half{transform: scale(0.5);}
+  &.size-double{transform: scale(2);}
+  &.skew-horisontal{transform: skew(30deg,0);}
+  &.skew-vertical{transform: skew(0,30deg);}
+  &.skew-vertical{transform: skew(0,30deg);}
+  &.move{transform: translate(100px,100px);}
+  &.move-flip{transform: rotate(180deg) translate(100px,100px);}
+
+}
+td{width:140px;} 

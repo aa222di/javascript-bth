@@ -1,0 +1,134 @@
+@import 'variables';
+@import 'grid';
+@import 'mixins';
+
+
+/* ## Typographical Elements
+--------------------------------------------- */
+html {
+  color: $body-font-color;
+  font-family: $body-font;
+  font-size: 62.5%;   /* Sets up the Base 10 stuff */
+  
+}
+
+
+
+body {
+    @include font-size($p);
+    font-weight: $body-font-weight;
+    line-height: $line-height;
+  }
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+::-moz-selection {
+  background-color: $body-font-color;
+  color: $background-color; }
+
+::selection {
+  background-color: $body-font-color;
+  color: $background-color;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none; }
+
+a:hover {
+  color: $body-font-color;
+  text-decoration: underline; }
+
+p {
+  margin: 0 0 $line-height;
+ }
+
+ol,
+ul {
+  margin: 0 0 $line-height 0;
+  padding: 0; }
+
+ul {
+  list-style: square outside;
+}
+
+li {
+  list-style-type: none; 
+}
+
+b,
+strong {
+  font-weight: 700; }
+
+blockquote,
+cite,
+em,
+i {
+  font-style: italic; }
+
+blockquote {
+  margin: $line-height; }
+
+blockquote::before {
+  content: "\201C";
+  display: block;
+  font-size: 30px;
+  height: 0;
+  left: -20px;
+  position: relative;
+  top: -10px; }
+
+/* ## Headings
+--------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-font-color;
+  font-family: $heading-font;
+ }
+
+h1,h2,h3 {
+  font-weight: $heading-font-weighth13;
+}
+
+h4,h5,h6 {
+  font-weight: $heading-font-weighth46;
+}
+
+
+h1 {
+  @include font-size($h1);
+  line-height: 2* $line-height;
+  @include position($h1, ($line-height*2));
+}
+
+h2 {
+  @include font-size($h2); }
+
+h3 {
+  @include font-size($h3); }
+
+h4 {
+  @include font-size($p); 
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+h5 {
+  @include font-size($p); }
+
+h6 {
+  @include font-size($p); }

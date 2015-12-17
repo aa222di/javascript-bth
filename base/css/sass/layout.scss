@@ -1,0 +1,24 @@
+@import 'variables';
+@import 'grid';
+@import 'mixins';
+@import 'normalize';
+@import 'typography';
+@import 'elements';
+
+body {
+	background-color: #fafafa;
+}
+
+footer {
+	@include wrapper();
+	padding: $line-height;
+}
+
+.text-window {
+	@include wrapper();
+	padding: $line-height;
+	margin-top: 4*$line-height;
+	box-shadow: 0 0 3px 0px rgba(0,0,0,0.2);
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 5px;
+}

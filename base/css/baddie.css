@@ -1,0 +1,17 @@
+#b1, #baddie1 {
+  position: absolute;
+  transition: left 0.2s ease 0s, top 0.2s ease 0s; }
+
+.baddie {
+  width: 64px;
+  height: 64px;
+  background-image: url(../img/sprite_mickey_mos.png);
+  z-index: 0; }
+  .baddie.up {
+    background-position: 64px 0; }
+  .baddie.down {
+    background-position: 128px 0px; }
+  .baddie.left {
+    background-position: 192px 0; }
+  .baddie.right {
+    background-position: 0 0; }
