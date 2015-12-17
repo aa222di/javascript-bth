@@ -53,7 +53,14 @@
 <div id='box4' class='box'>
 	<span class='minimize'>x</span>
 	<div class='box-content'>
-
+		<h2>4. Läsa och ändra storleken på ett element</h2>
+		<p>Här har vi en bild på ännu en söt liten katt. Använd kontrollerna nedanför för att ändra kattens storlek, bredd och höjd.</p>
+		<img src="../../base/img/happy-kitten.png" alt='Söt liten katt' id='happyCat' class='obj-right'>
+		<form>
+			<div class='button-group'><label>Bredd</label><input type='button' value='+' id='addWidth'><input type='button' value='-' id='removeWidth'></div>
+			<div class='button-group'><label>Höjd</label><input type='button' value='+' id='addHeight'><input type='button' value='-' id='removeHeight'></div>
+			<div class='show-dimensions'><span id='image-dimensions'></span></div>
+		</form>
 	</div>
 </div>
 

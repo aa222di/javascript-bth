@@ -150,6 +150,39 @@ $box-background-color: #fd6769;
 	}
 }
 
+#box4 {
+
+	img {
+		height: auto;
+		width: auto;
+		transition: .5s ease all;
+	}
+
+	label {
+		display: block;
+		margin-bottom: round($line-height/4);
+		font-weight: 600;
+	}
+
+	.button-group {
+		margin-bottom: $line-height;
+		input {
+			margin: 0;
+			font-weight: 600;
+			&:last-child {
+				margin-left: 2px;
+			}
+			&:first-of-type {
+				border-radius: 5px 0 0 5px;
+			}
+
+			&:last-of-type {
+				border-radius: 0 5px 5px 0;
+			}
+		}
+	}
+}
+
 
 
 

@@ -156,3 +156,23 @@ html {
     margin-top: 26px;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
     float: left; }
+
+#box4 img {
+  height: auto;
+  width: auto;
+  transition: .5s ease all; }
+#box4 label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 600; }
+#box4 .button-group {
+  margin-bottom: 26px; }
+  #box4 .button-group input {
+    margin: 0;
+    font-weight: 600; }
+    #box4 .button-group input:last-child {
+      margin-left: 2px; }
+    #box4 .button-group input:first-of-type {
+      border-radius: 5px 0 0 5px; }
+    #box4 .button-group input:last-of-type {
+      border-radius: 0 5px 5px 0; }

@@ -5,6 +5,7 @@ $(document).ready(function(){
   'use strict';
   var boxHeight = $('.box').width();
   var createPaletteColor;
+  var Img = {};
 
   createPaletteColor = function(color, parentElement) {
 
@@ -64,15 +65,54 @@ $(document).ready(function(){
     $(this).toggleClass('rotate');
   });
 
-    // BOX 2 - eventPropagation
+    // BOX 3 - Adding and removing objects
   $('#box3').find('#addColor').click(function() {
     var color = $(this).parent().find('#colorPicker').val();
     console.log('Add color in box 3 was clicked:' + this);
     console.log('Selected color is: ' + color);
-
     createPaletteColor(color, $('#palette'));
-
   });
+
+  // Add to the image objects
+  Img.create = function(element) {
+    this.element = element;
+    this.width = $(this.element).width();
+    this.height = $(this.element).height();
+    console.log('Created new Img obj:' + this);
+    console.log('Dimensions are set to:' + this.width + ' x ' + this.height);
+  }
+
+  Img.changeDimensions = function(width, height) {
+    width += this.width;
+    height += this.height;
+
+    $(this.element).width(width);
+    $(this.element).height(height);
+
+    console.log('Changed size of image from: ' + this.width + ' x ' + this.height + ' to: ' + width + ' x ' + height);
+    this.width = width;
+    this.height = height;
+    console.log('New dimensions are set to:' + this.width + ' x ' + this.height);
+    document.getElementById('image-dimensions').innerHTML = 'Bildens aktuella dimension: ' + Img.width + ' x ' + Img.height;
+  }
+
+  Img.create($('#happyCat'));
+
+
+  // BOX 4 - Adding and removing objects
+  $('#box4').find('#addWidth').click(function() {
+    Img.changeDimensions(10,0);
+  });
+  $('#box4').find('#removeWidth').click(function() {
+    Img.changeDimensions(-10,0);
+  });
+  $('#box4').find('#addHeight').click(function() {
+    Img.changeDimensions(0, 10);
+  });
+  $('#box4').find('#removeHeight').click(function() {
+    Img.changeDimensions(0, -10);
+  });
+  Img.changeDimensions(0, 0);
 
 
 
