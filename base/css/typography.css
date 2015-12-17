@@ -122,7 +122,8 @@ h4,
 h5,
 h6 {
   color: #333;
-  font-family: Lato, Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif; }
+  font-family: Lato, Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif;
+  margin-bottom: 26px; }
 
 h1, h2, h3 {
   font-weight: normal; }

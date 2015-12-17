@@ -1,0 +1,158 @@
+/* ------------------------ TABLE OF CONTENTS ------------------------ */
+/*
+
+- Typography
+- Grid Values
+- Sticky Footer Value
+- Colors
+
+
+*/
+/* ------------------------ TYPOGRAPHY ------------------------ */
+/* Here is where you set your font-families and your body font-size. The rest of the typography adjusts itself to this value based on the Golden Ratio.
+This generates a base which is seated on the same baseline. In case you wan't to change individual H1-H6 etc. You have to do that in typography.less or
+better yet - override the styles in another document. */
+/* Font families */
+/* Font sizes */
+/* VARIABLES BASED ON THE GOLDEN RATIO */
+/* Font colors */
+/* Font weight */
+/* Links */
+/* ------------------------ COLORS ------------------------ */
+/* ------------------------ GRID VALUES ------------------------ */
+/* Media queries */
+body {
+  width: 100%;
+  overflow-y: auto;
+  min-height: 100%;
+  margin: 0 auto; }
+
+html {
+  height: 100%;
+  overflow: auto; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+/* ------------------------ MIXINS ------------------------ */
+/* Calculates font size in rem and px  for browser compatability */
+/* Sets h1 on baseline */
+.main-title {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 0 13px;
+  margin-bottom: 26px; }
+
+.box {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  width: 33.33333%;
+  padding: 0 13px;
+  height: 260px;
+  margin-bottom: 26px;
+  transition: 0.5s ease all;
+  position: relative; }
+  .box.show {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0 13px; }
+    .box.show .box-content {
+      background-color: #fff;
+      background-image: none;
+      padding: 13px;
+      overflow: auto; }
+    .box.show .minimize {
+      display: block;
+      position: absolute;
+      top: -10px;
+      right: 4px;
+      width: 26px;
+      height: 26px;
+      background-color: #960204;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 21px;
+      font-weight: 600;
+      color: #fff; }
+  .box .box-content {
+    background-color: #fd6769;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/giftbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 4px solid #fd6769; }
+  .box .minimize {
+    display: block;
+    color: transparent;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer; }
+  .box img {
+    width: 33%; }
+
+#box1 .box-content * {
+  cursor: pointer;
+  background-color: transparent;
+  transition: .5s ease all; }
+  #box1 .box-content *.clicked {
+    background-color: #fd6769; }
+#box1 img {
+  padding: 26px;
+  border-radius: 50%; }
+
+#box2 .box-content {
+  overflow: hidden; }
+#box2 article, #box2 img {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  transition: .5s ease all;
+  cursor: pointer; }
+  #box2 article.rotate, #box2 img.rotate {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+#box2 article {
+  *zoom: 1; }
+  #box2 article:before, #box2 article:after {
+    content: "";
+    display: table; }
+  #box2 article:after {
+    clear: both; }
+
+.inverted-color {
+  background-color: #333;
+  color: #fff; }
+
+#box3 .box-content {
+  overflow: hidden; }
+#box3 input {
+  width: 46%;
+  height: 52px;
+  margin: 0; }
+  #box3 input:first-child {
+    margin-right: 2%; }
+  #box3 input:last-child {
+    margin-left: 2%; }
+#box3 #palette {
+  min-height: 208px; }
+  #box3 #palette .palette-color {
+    height: 52px;
+    width: 52px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 26px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+    float: left; }

@@ -1,0 +1,156 @@
+@import 'variables';
+@import 'grid';
+@import 'mixins';
+
+$box-background-color: #fd6769;
+
+.main-title {
+	@include column(12);
+	margin-bottom: $line-height;
+}
+
+.box {
+	@include column(4);
+	height: $line-height*10;
+	margin-bottom: $line-height;
+	transition: 0.5s ease all;
+	position: relative;
+
+	&.show {
+		@include column(12);
+
+		.box-content {
+			background-color: #fff;
+			background-image: none;
+			padding: round(0.5 * $line-height);
+			overflow: auto;
+		}
+
+		.minimize {
+			display: block;
+		    position: absolute;
+		    top: -10px;
+		    right: 4px;
+		    width: $line-height;
+		    height: $line-height;
+		    background-color: darken($box-background-color, 40);
+		    border-radius: 50%;
+		    text-align: center;
+		    line-height: 21px;
+		    font-weight: 600;
+		    color: #fff;
+		}
+
+	}
+
+	.box-content {
+		background-color: $box-background-color;
+		border-radius: 10px;
+		height: 100%;
+		width: 100%;
+		background-image: url('../img/giftbox.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		border: 4px solid $box-background-color;
+	}
+
+	.minimize {
+		display: block;
+		color: transparent;
+		background-color: transparent;
+		width: 100%;
+		height: 100%;
+		z-index: 9;
+		position: absolute;
+		top:0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		cursor: pointer;
+	}
+
+	img {
+		width: 33%;
+	}
+}
+
+#box1 {
+	.box-content {
+		* {
+			cursor: pointer;
+			background-color: transparent;
+			transition: .5s ease all;
+			&.clicked {
+				background-color: $box-background-color;	
+			}
+		}
+	}
+	img {
+		padding: $line-height;
+		border-radius: 50%;
+	}
+}
+
+#box2 {
+
+	.box-content {
+		overflow: hidden;
+	}
+
+	article, img {
+		transform: rotate(0deg);
+		transition: .5s ease all;
+		cursor: pointer;
+
+		&.rotate {
+			transform: rotate(45deg);
+		}
+	}
+	article {
+		@include clearfix();
+	}
+}
+
+.inverted-color {
+	background-color: $body-font-color;
+	color: #fff;
+}
+
+#box3 {
+
+	.box-content {
+		overflow: hidden;
+	}
+
+	input {
+		width: 46%;
+		height: 2*$line-height;
+		margin: 0;
+
+		&:first-child {
+			margin-right: 2%;
+		}
+		&:last-child {
+			margin-left: 2%;
+		}
+	}
+
+	#palette {
+		min-height: $line-height*8;
+
+		.palette-color {
+			height: $line-height*2;
+			width: $line-height*2;
+			cursor: pointer;
+			margin-left: 5px;
+			margin-top: $line-height;
+			box-shadow: 0 0 2px 1px rgba(0,0,0,0.3);
+			float: left;
+		}
+	}
+}
+
+
+
+
+
