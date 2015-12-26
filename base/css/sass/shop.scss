@@ -1,0 +1,46 @@
+@import 'variables';
+@import 'grid';
+@import 'mixins';
+
+.shop {
+	@include clearfix();
+	table.product-table {
+
+		@include column(8);
+		display: table;
+
+		td:last-child, th:last-child {
+			text-align: right;
+		}
+
+		.product-img {
+			height: $line-height*3;
+		}
+
+		input.buy {
+			padding:  round($line-height/8) round($line-height/4);
+			border-radius: 5px;
+			font-size: smaller;
+			background-color: #e5554e;
+			font-weight: 400;
+			transition: .2s ease all;
+
+			&:hover {
+				background-color: darken(#e5554e, 20);
+			}
+		}
+	}
+
+	.shopping-cart {
+		@include column(4);
+		padding-left: $line-height;
+		padding-right: 0;
+
+		#cart {
+			background-color: #fafafa;
+			border: 1px solid #ddd;
+			min-height: $line-height*3;
+			padding: round($line-height/2);
+		}
+	}
+}

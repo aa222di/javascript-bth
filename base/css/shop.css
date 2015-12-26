@@ -1,0 +1,79 @@
+/* ------------------------ TABLE OF CONTENTS ------------------------ */
+/*
+
+- Typography
+- Grid Values
+- Sticky Footer Value
+- Colors
+
+
+*/
+/* ------------------------ TYPOGRAPHY ------------------------ */
+/* Here is where you set your font-families and your body font-size. The rest of the typography adjusts itself to this value based on the Golden Ratio.
+This generates a base which is seated on the same baseline. In case you wan't to change individual H1-H6 etc. You have to do that in typography.less or
+better yet - override the styles in another document. */
+/* Font families */
+/* Font sizes */
+/* VARIABLES BASED ON THE GOLDEN RATIO */
+/* Font colors */
+/* Font weight */
+/* Links */
+/* ------------------------ COLORS ------------------------ */
+/* ------------------------ GRID VALUES ------------------------ */
+/* Media queries */
+body {
+  width: 100%;
+  overflow-y: auto;
+  min-height: 100%;
+  margin: 0 auto; }
+
+html {
+  height: 100%;
+  overflow: auto; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+/* ------------------------ MIXINS ------------------------ */
+/* Calculates font size in rem and px  for browser compatability */
+/* Sets h1 on baseline */
+.shop {
+  *zoom: 1; }
+  .shop:before, .shop:after {
+    content: "";
+    display: table; }
+  .shop:after {
+    clear: both; }
+  .shop table.product-table {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 66.66667%;
+    padding: 0 13px;
+    display: table; }
+    .shop table.product-table td:last-child, .shop table.product-table th:last-child {
+      text-align: right; }
+    .shop table.product-table .product-img {
+      height: 78px; }
+    .shop table.product-table input.buy {
+      padding: 3px 7px;
+      border-radius: 5px;
+      font-size: smaller;
+      background-color: #e5554e;
+      font-weight: 400;
+      transition: .2s ease all; }
+      .shop table.product-table input.buy:hover {
+        background-color: #b3211a; }
+  .shop .shopping-cart {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 33.33333%;
+    padding: 0 13px;
+    padding-left: 26px;
+    padding-right: 0; }
+    .shop .shopping-cart #cart {
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      min-height: 78px;
+      padding: 13px; }
