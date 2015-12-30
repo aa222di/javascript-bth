@@ -44,3 +44,65 @@
 		}
 	}
 }
+
+
+
+fieldset {
+	border: none;
+}
+
+.cform-columns-2 {
+	@include clearfix();
+	.cform-column-1, .cform-column-2 {
+		@include column(6);
+	}
+	.cform-buttonbar {
+		@include column(12);
+		input {
+			float: right;
+		}
+	}
+
+	input, select {
+		height: 2*$line-height;
+		min-height: 2*$line-height;
+		max-height: 2*$line-height;
+		border-radius: 3px;
+	}
+
+	p {
+		height: 3*$line-height;
+	}
+
+	.validation-message {
+		position: relative;
+		top: -$line-height;
+		margin-bottom: -$line-height;
+
+		li {
+			color: red;
+			font-weight: 600;
+			font-size: smaller;
+		}
+	}
+}
+
+.success-payment, .error-payment {
+	margin: $line-height;
+	padding: round($line-height/4);
+	display: block;
+}
+
+.error-payment {
+	background-color: #E5B7C0;
+	border: 1px solid darken(#E5B7C0, 15);
+}
+
+
+.success-payment {
+	background-color: #B7E5C8;
+	border: 1px solid darken(#B7E5C8, 15);
+}
+
+
+

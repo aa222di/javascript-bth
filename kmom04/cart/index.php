@@ -1,5 +1,5 @@
 <?php 
-$title='Inloggning'; 
+$title='The Sticker Shop'; 
 $css='<link rel="stylesheet" type="text/css" href="../../base/css/mall.css"><link rel="stylesheet" type="text/css" href="../../base/css/shop.css">';
 include(__DIR__ . '/../../base/header.php');
 include(__DIR__ . '/products.php'); ?>

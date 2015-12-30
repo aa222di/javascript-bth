@@ -77,3 +77,56 @@ html {
       border: 1px solid #ddd;
       min-height: 78px;
       padding: 13px; }
+
+fieldset {
+  border: none; }
+
+.cform-columns-2 {
+  *zoom: 1; }
+  .cform-columns-2:before, .cform-columns-2:after {
+    content: "";
+    display: table; }
+  .cform-columns-2:after {
+    clear: both; }
+  .cform-columns-2 .cform-column-1, .cform-columns-2 .cform-column-2 {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 50%;
+    padding: 0 13px; }
+  .cform-columns-2 .cform-buttonbar {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0 13px; }
+    .cform-columns-2 .cform-buttonbar input {
+      float: right; }
+  .cform-columns-2 input, .cform-columns-2 select {
+    height: 52px;
+    min-height: 52px;
+    max-height: 52px;
+    border-radius: 3px; }
+  .cform-columns-2 p {
+    height: 78px; }
+  .cform-columns-2 .validation-message {
+    position: relative;
+    top: -26px;
+    margin-bottom: -26px; }
+    .cform-columns-2 .validation-message li {
+      color: red;
+      font-weight: 600;
+      font-size: smaller; }
+
+.success-payment, .error-payment {
+  margin: 26px;
+  padding: 7px;
+  display: block; }
+
+.error-payment {
+  background-color: #E5B7C0;
+  border: 1px solid #d17f8f; }
+
+.success-payment {
+  background-color: #B7E5C8;
+  border: 1px solid #7fd19d; }

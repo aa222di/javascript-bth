@@ -8,6 +8,7 @@ $(document).ready(function(){
 
   Shop.productTable = $('#products');
   Shop.cartDiv = $('#cart');
+  Shop.checkoutForm = $('#checkout-form');
 
   Shop.getCart = function() {
     console.log('Getting cart data');
@@ -16,6 +17,37 @@ $(document).ready(function(){
       dataType: 'json',
       success: Shop.updateCart
     }); 
+  };
+
+  Shop.getCheckoutForm = function() {
+    console.log('Getting checkout form');
+    $.ajax({
+      url: 'shop.php?shop=form',
+      dataType: 'json',
+      success: Shop.insertForm
+    }); 
+  };
+
+  Shop.updateCheckoutForm = function() {
+    console.log('Updating checkout form');
+
+    $.ajax({
+      type: 'post',
+      url: 'shop.php?shop=pay',
+      data: $('#form1').serialize(),
+      dataType: 'json',
+      success: Shop.insertForm
+    }); 
+  };
+
+  Shop.insertForm = function(data) {
+    $(Shop.checkoutForm).html(data.response + data.form);
+
+    $('#form-element-doPay').click(function(event) {
+      event.preventDefault();
+      console.log('Clicked');
+      Shop.updateCheckoutForm();
+    });
   };
 
   Shop.updateCart = function(data) {
@@ -78,10 +110,13 @@ $(document).ready(function(){
 
   Shop.createCart();
   Shop.getCart();
+  Shop.getCheckoutForm();
 
   $('.buy').click(function() {
     Shop.addItem(this.id);
   });
+
+
 
 
 
