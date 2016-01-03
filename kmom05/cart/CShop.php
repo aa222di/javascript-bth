@@ -1,5 +1,6 @@
 <?php
 namespace toeswade;
+
 /**
  * A class with useful shop and cart methods
  *
@@ -10,8 +11,6 @@ class CShop
     private $products;
     private $sum = 0;
     private $items = array();
-    private $checkoutForm;
-    private $formResponse = '';
 
     // Session vars
     private static $sessionCartItems= 'CShop::cartItems';
@@ -32,28 +31,6 @@ class CShop
 
 		//$_SESSION = array();
 
-    }
-
-    public function setCheckoutForm( \CForm $form ) {
-        $this->checkoutForm = $form;
-    }
-
-    public function getCheckoutForm($formId=null, $pay=false) {
-
-        if($pay) {
-            $_POST['doPay'] = true;
-        }
-
-
-        $status = $this->checkoutForm->Check();
-        if($status === true) {
-          $this->formResponse = "<span id='output-message' class='success-payment'>The payment transaction was successful. However, the payment can only be done through our excellent ajax interface.</span>";
-        }
-        else if($status === false){
-          $this->formResponse = "<span id='output-message' class='error-payment'>The form contains invalid values. Correct them and try again.</span>";
-        }
-
-        return array('form' => $this->checkoutForm->GetHTML(array('id' => $formId, 'columns' => 2)), 'response' => $this->formResponse);
     }
 
     public function getCart() {

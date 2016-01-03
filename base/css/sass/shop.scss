@@ -87,7 +87,7 @@ fieldset {
 	}
 }
 
-.success-payment, .error-payment {
+.success-payment, .error-payment, .info-payment {
 	margin: $line-height;
 	padding: round($line-height/4);
 	display: block;
@@ -104,5 +104,41 @@ fieldset {
 	border: 1px solid darken(#B7E5C8, 15);
 }
 
+.loader {
+	margin-left: $line-height;
+	img {
+		width: $line-height;
+		margin-right: 10px;
+		display: inline-block;
+	}
+}
+
+.checkout-link {
+	@include column(12);
+	text-align: right;
+
+	a, button {
+		display: inline-block;
+		padding: round($line-height/2);
+		border-radius: 5px;
+		color: #fff;
+		font-size: smaller;
+		background-color: #e5554e;
+		font-weight: 400;
+		transition: .2s ease all;
+		text-transform: uppercase;
+			&:hover {
+				background-color: darken(#e5554e, 20);
+				text-decoration: none;
+			}
+	}
+	button {
+		background-color: #aaa;
+			&:hover {
+				background-color: darken(#aaa, 20);
+				text-decoration: none;
+			}
+	}
+}
 
 

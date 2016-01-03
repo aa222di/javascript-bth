@@ -25,6 +25,11 @@ switch ($action) {
     $output = $Shop->getCart();
     break;
 
+  case 'clear':
+    $Shop->clearCart();
+    $output = $Shop->getCart();
+    break;
+
   case 'form':
     //reset($_POST);
     $Shop->setCheckoutForm($form);

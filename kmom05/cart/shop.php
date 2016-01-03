@@ -1,7 +1,6 @@
 <?php
 include(__DIR__ . '/CShop.php'); 
 include(__DIR__ . '/products.php'); 
-include(__DIR__ . '/checkout-form.php'); 
 
 // Create the session
 session_name(preg_replace('/[^a-z\d]/i', '', __DIR__));
@@ -23,19 +22,6 @@ switch ($action) {
     reset($_POST);
     $Shop->addToCart(key($_POST));
     $output = $Shop->getCart();
-    break;
-
-  case 'form':
-    //reset($_POST);
-    $Shop->setCheckoutForm($form);
-    $output = $Shop->getCheckoutForm('form1');
-    break;
-
-  case 'pay':
-    //reset($_POST);
-    sleep(4);
-   $Shop->setCheckoutForm($form);
-    $output = $Shop->getCheckoutForm('form1', true);
     break;
   
   default:

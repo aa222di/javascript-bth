@@ -118,7 +118,7 @@ fieldset {
       font-weight: 600;
       font-size: smaller; }
 
-.success-payment, .error-payment {
+.success-payment, .error-payment, .info-payment {
   margin: 26px;
   padding: 7px;
   display: block; }
@@ -130,3 +130,36 @@ fieldset {
 .success-payment {
   background-color: #B7E5C8;
   border: 1px solid #7fd19d; }
+
+.loader {
+  margin-left: 26px; }
+  .loader img {
+    width: 26px;
+    margin-right: 10px;
+    display: inline-block; }
+
+.checkout-link {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 0 13px;
+  text-align: right; }
+  .checkout-link a, .checkout-link button {
+    display: inline-block;
+    padding: 13px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: smaller;
+    background-color: #e5554e;
+    font-weight: 400;
+    transition: .2s ease all;
+    text-transform: uppercase; }
+    .checkout-link a:hover, .checkout-link button:hover {
+      background-color: #b3211a;
+      text-decoration: none; }
+  .checkout-link button {
+    background-color: #aaa; }
+    .checkout-link button:hover {
+      background-color: #777777;
+      text-decoration: none; }

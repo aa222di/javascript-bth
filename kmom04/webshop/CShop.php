@@ -40,6 +40,8 @@ class CShop
 
     public function getCheckoutForm($formId=null, $pay=false) {
 
+        $this->formResponse = "<span id='output-message' class='info-payment'>Please fill in you credit card information. We will charge you <b>" . $this->sum . " €</b> for the stickers you have bougth.</span>";
+
         if($pay) {
             $_POST['doPay'] = true;
         }
@@ -47,7 +49,7 @@ class CShop
 
         $status = $this->checkoutForm->Check();
         if($status === true) {
-          $this->formResponse = "<span id='output-message' class='success-payment'>The payment transaction was successful. However, the payment can only be done through our excellent ajax interface.</span>";
+          $this->formResponse = "<span id='output-message' class='success-payment'>The payment transaction was successful. We have charged " . $this->sum . " from your credit card. Now please go back and shop some more! :)</span>";
         }
         else if($status === false){
           $this->formResponse = "<span id='output-message' class='error-payment'>The form contains invalid values. Correct them and try again.</span>";
@@ -58,6 +60,13 @@ class CShop
 
     public function getCart() {
     	return array('items' => $this->items, 'sum' => $this->sum);
+    }
+
+    public function clearCart() {
+                // Save in session
+        $_SESSION[self::$sessionCartSum] = $this->sum = 0;
+        $_SESSION[self::$sessionCartItems] = $this->items = array();
+        return array('items' => array(), 'sum' => 0);
     }
 
     public function addToCart($id) {

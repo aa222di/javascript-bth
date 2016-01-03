@@ -19,6 +19,15 @@ $(document).ready(function(){
     }); 
   };
 
+  Shop.clearCart = function() {
+    console.log('Clearing cart');
+    $.ajax({
+      url: 'shop.php?shop=clear',
+      dataType: 'json',
+      success: Shop.updateCart
+    }); 
+  };
+
   Shop.getCheckoutForm = function() {
     console.log('Getting checkout form');
     $.ajax({
@@ -67,22 +76,34 @@ $(document).ready(function(){
     if(data !== null) {
       
         keys = Object.keys(data.items);
-        console.log(keys);
-        for ( i = 0; i < keys.length; i+=1) {
-           id = keys[i];
 
-           // Check if productrow exists
-           if($('#cart' + id).length) {
-            console.log('Updating');
-            updateRow($('<td>' + data.items[id].name + '</td><td>' + data.items[id].quantity + '</td><td>' + data.items[id].sum + '</td>'), $('#cart' + id));
-           }
+        if(keys.length) {
+          console.log('Updating cart with products: ' + keys);
+          for ( i = 0; i < keys.length; i+=1) {
+             id = keys[i];
 
-           else {
-            console.log('Adding');
-            addRow($('<tr id="cart' + id + '"><td>' + data.items[id].name + '</td><td>' + data.items[id].quantity + '</td><td>' + data.items[id].sum + '</td></tr>'));
-           }
+             // Check if productrow exists
+             if($('#cart' + id).length) {
+              console.log('Updating');
+              updateRow($('<td>' + data.items[id].name + '</td><td>' + data.items[id].quantity + '</td><td>' + data.items[id].sum + '</td>'), $('#cart' + id));
+             }
+
+             else {
+              console.log('Adding');
+              addRow($('<tr id="cart' + id + '"><td>' + data.items[id].name + '</td><td>' + data.items[id].quantity + '</td><td>' + data.items[id].sum + '</td></tr>'));
+             }
+          }
         }
+        else {
+          // Empty the cart, there's no products in cart
+          $(Shop.cartBody).html('');
+        }
+
+
     }
+
+
+
     $(Shop.cartSum).html(data.sum);
   };
 
@@ -116,6 +137,10 @@ $(document).ready(function(){
 
   $('.buy').click(function() {
     Shop.addItem(this.id);
+  });
+
+  $('#clear-cart').click(function() {
+    Shop.clearCart();
   });
 
 
