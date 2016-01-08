@@ -1,0 +1,52 @@
+/* ------------------------ TABLE OF CONTENTS ------------------------ */
+/*
+
+- Typography
+- Grid Values
+- Sticky Footer Value
+- Colors
+
+
+*/
+/* ------------------------ TYPOGRAPHY ------------------------ */
+/* Here is where you set your font-families and your body font-size. The rest of the typography adjusts itself to this value based on the Golden Ratio.
+This generates a base which is seated on the same baseline. In case you wan't to change individual H1-H6 etc. You have to do that in typography.less or
+better yet - override the styles in another document. */
+/* Font families */
+/* Font sizes */
+/* VARIABLES BASED ON THE GOLDEN RATIO */
+/* Font colors */
+/* Font weight */
+/* Links */
+/* ------------------------ COLORS ------------------------ */
+/* ------------------------ GRID VALUES ------------------------ */
+/* Media queries */
+body {
+  width: 100%;
+  overflow-y: auto;
+  min-height: 100%;
+  margin: 0 auto; }
+
+html {
+  height: 100%;
+  overflow: auto; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+/* ------------------------ MIXINS ------------------------ */
+/* Calculates font size in rem and px  for browser compatability */
+/* Sets h1 on baseline */
+canvas {
+  margin: 0 auto;
+  max-width: 70%;
+  *zoom: 1;
+  display: block;
+  margin-top: 52px;
+  box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9); }
+  canvas:before, canvas:after {
+    content: "";
+    display: table; }
+  canvas:after {
+    clear: both; }

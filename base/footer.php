@@ -1,6 +1,6 @@
 <?php
   $d = explode("/", trim($path, "/"));
-  $srcUrl = '../../base/source.php?dir=' . end($d) . '&amp;file=' . basename($_SERVER["PHP_SELF"]) . '#file';
+  $srcUrl = '../../source.php?dir=' . end($d) . '&amp;file=' . basename($_SERVER["PHP_SELF"]) . '#file';
 ?>
  
 <footer id='footer'>
@@ -46,6 +46,7 @@
 </footer>
 <script src="../../base/js/jquery.js"></script>
 <script src="../../base/js/mos.js"></script>
+<script src="../../base/js/functions.js"></script>
 <script src="../../base/js/eden.js"></script>
 <script src="main.js"></script>
 </body>
