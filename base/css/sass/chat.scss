@@ -1,0 +1,36 @@
+@import 'variables';
+@import 'grid';
+@import 'mixins';
+
+input[type='text'] {
+	margin-bottom: $line-height;
+}
+
+#chat {
+	width: 100%;
+	height: $line-height*10;
+	overflow-y: scroll;
+	border: 1px solid #ddd;
+	border-bottom: none;
+	margin-top: $line-height;
+	@include clearfix();
+	padding: $line-height;
+
+	p {
+		font-weight: 200;
+		font-size: smaller;
+		margin-bottom: 5px;
+		line-height: 18px;
+	}
+}
+
+#message {
+	float: left;
+	width: 90%;
+}
+
+#send-message {
+	float: left;
+	width: 10%;
+	backgorund-color: #ddd;
+}

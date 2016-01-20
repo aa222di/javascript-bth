@@ -1,0 +1,70 @@
+/* ------------------------ TABLE OF CONTENTS ------------------------ */
+/*
+
+- Typography
+- Grid Values
+- Sticky Footer Value
+- Colors
+
+
+*/
+/* ------------------------ TYPOGRAPHY ------------------------ */
+/* Here is where you set your font-families and your body font-size. The rest of the typography adjusts itself to this value based on the Golden Ratio.
+This generates a base which is seated on the same baseline. In case you wan't to change individual H1-H6 etc. You have to do that in typography.less or
+better yet - override the styles in another document. */
+/* Font families */
+/* Font sizes */
+/* VARIABLES BASED ON THE GOLDEN RATIO */
+/* Font colors */
+/* Font weight */
+/* Links */
+/* ------------------------ COLORS ------------------------ */
+/* ------------------------ GRID VALUES ------------------------ */
+/* Media queries */
+body {
+  width: 100%;
+  overflow-y: auto;
+  min-height: 100%;
+  margin: 0 auto; }
+
+html {
+  height: 100%;
+  overflow: auto; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+/* ------------------------ MIXINS ------------------------ */
+/* Calculates font size in rem and px  for browser compatability */
+/* Sets h1 on baseline */
+input[type='text'] {
+  margin-bottom: 26px; }
+
+#chat {
+  width: 100%;
+  height: 260px;
+  overflow-y: scroll;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  margin-top: 26px;
+  *zoom: 1;
+  padding: 26px; }
+  #chat:before, #chat:after {
+    content: "";
+    display: table; }
+  #chat:after {
+    clear: both; }
+  #chat p {
+    font-weight: 200;
+    font-size: smaller;
+    margin-bottom: 5px;
+    line-height: 18px; }
+
+#message {
+  float: left;
+  width: 90%; }
+
+#send-message {
+  float: left;
+  width: 10%;
+  backgorund-color: #ddd; }
